@@ -30,9 +30,14 @@ class ResponsiveMenu extends Component {
     this.state = {
       showMenu: false
     };
+    this.removeBodyOpenClass();
   }
   
   componentWillUnmount() {
+    this.removeBodyOpenClass();
+  }
+  
+  removeBodyOpenClass = () => {
     if (document.body.classList.contains(this.props.bodyOpenMenuClass)) {
         document.body.classList.remove(this.props.bodyOpenMenuClass);
     }
