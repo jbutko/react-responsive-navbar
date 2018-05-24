@@ -31,6 +31,12 @@ class ResponsiveMenu extends Component {
       showMenu: false
     };
   }
+  
+  componentWillUnmount() {
+    if (document.body.classList.contains(this.props.bodyOpenMenuClass) {
+        document.body.classList.remove(this.props.bodyOpenMenuClass);
+    }
+  }
 
   handleClick = () => {
     !this.state.showMenu
