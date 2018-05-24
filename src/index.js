@@ -33,7 +33,7 @@ class ResponsiveMenu extends Component {
   }
 
   handleClick = () => {
-    this.state.showMenu
+    !this.state.showMenu
       ? document.body.classList.add(this.props.bodyOpenMenuClass)
       : document.body.classList.remove(this.props.bodyOpenMenuClass);
     this.setState({ showMenu: !this.state.showMenu });
@@ -77,6 +77,7 @@ ResponsiveMenu.propTypes = {
 
 ResponsiveMenu.defaultProps = {
   largeMenuClassName: '',
-  smallMenuClassName: ''
+  smallMenuClassName: '',
+  bodyOpenMenuClass: ''
 };
 export default ResponsiveMenu;
