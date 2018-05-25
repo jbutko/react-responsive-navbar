@@ -33,20 +33,27 @@ class ResponsiveMenu extends Component {
     this.removeBodyOpenClass();
   }
   
+  componentDidMount() {
+    this.removeBodyOpenClass();
+  }
+  
   componentWillUnmount() {
     this.removeBodyOpenClass();
   }
   
   removeBodyOpenClass = () => {
-    if (document.body.classList.contains(this.props.bodyOpenMenuClass)) {
+    if (document && document.body.classList.contains(this.props.bodyOpenMenuClass)) {
         document.body.classList.remove(this.props.bodyOpenMenuClass);
     }
   }
 
   handleClick = () => {
-    !this.state.showMenu
-      ? document.body.classList.add(this.props.bodyOpenMenuClass)
-      : document.body.classList.remove(this.props.bodyOpenMenuClass);
+    if (document) {
+      !this.state.showMenu
+        ? document.body.classList.add(this.props.bodyOpenMenuClass)
+        : document.body.classList.remove(this.props.bodyOpenMenuClass);
+    }
+
     this.setState({ showMenu: !this.state.showMenu });
   };
 
