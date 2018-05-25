@@ -42,8 +42,10 @@ class ResponsiveMenu extends Component {
   }
   
   removeBodyOpenClass = () => {
-    if (document && document.body.classList.contains(this.props.bodyOpenMenuClass)) {
+    if (typeof document !== 'undefined') {
+      if (document.body.classList.contains(this.props.bodyOpenMenuClass)) {
         document.body.classList.remove(this.props.bodyOpenMenuClass);
+      }
     }
   }
 
