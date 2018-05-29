@@ -41,6 +41,12 @@ class ResponsiveMenu extends Component {
     this.removeBodyOpenClass();
   }
   
+  componentWillReceiveProps(nextProps) {
+    if (nextProps && typeof nextProps.showMenu !== 'undefined') {
+      this.setState({ showMenu: nextProps.showMenu });
+    }
+  }
+  
   removeBodyOpenClass = () => {
     if (typeof document !== 'undefined') {
       if (document.body.classList.contains(this.props.bodyOpenMenuClass)) {
@@ -66,7 +72,8 @@ class ResponsiveMenu extends Component {
       smallMenuClassName,
       changeMenuOn,
       menuOpenButton,
-      menuCloseButton
+      menuCloseButton,
+      showMenu
     } = this.props;
     return (
       <div>
@@ -92,12 +99,14 @@ ResponsiveMenu.propTypes = {
   changeMenuOn: PropTypes.string.isRequired,
   menuOpenButton: PropTypes.node.isRequired,
   menuCloseButton: PropTypes.node.isRequired,
-  bodyOpenMenuClass: PropTypes.string
+  bodyOpenMenuClass: PropTypes.string,
+  showMenu: PropTypes.bool
 };
 
 ResponsiveMenu.defaultProps = {
   largeMenuClassName: '',
   smallMenuClassName: '',
-  bodyOpenMenuClass: ''
+  bodyOpenMenuClass: '',
+  showMenu: false
 };
 export default ResponsiveMenu;
