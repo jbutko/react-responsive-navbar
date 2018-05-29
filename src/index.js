@@ -44,6 +44,10 @@ class ResponsiveMenu extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps && typeof nextProps.showMenu !== 'undefined') {
       this.setState({ showMenu: nextProps.showMenu });
+      
+      if (nextProps.showMenu) {
+        this.removeBodyOpenClass();
+      }
     }
   }
   
