@@ -1,5 +1,14 @@
 # react-responsive-navbar
 
+### Notes by jbutko:
+This is little bit pimped `react-responsive-navbar` package by @stephanieinez with support for toggling menu via `showMenu` prop and support for adding body class when responsive nav is active.
+
+Install:
+`npm i jbutko/react-responsive-navbar`
+
+
+====== original readme ======
+
 Nothing crazy, nothing flashy, just a simple, flexible & completely customisable
 responsive navigation bar component. Check out
 [this demo](https://stephanieinez.github.io/react-responsive-navbar/).
